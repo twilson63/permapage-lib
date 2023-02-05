@@ -1,0 +1,36 @@
+{
+  "name": "@permaweb/pages-js",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/twilson63/permapage-lib.git",
+  "author": "Tom Wilson <tom@hyper.io>",
+  "license": "MIT",
+  "dependencies": {
+    "base64-js": "^1.5.1",
+    "hast-util-select": "^5.0.5",
+    "hast-util-to-string": "^2.0.0",
+    "pako": "^2.1.0",
+    "ramda": "^0.28.0",
+    "rehype-document": "^6.1.0",
+    "rehype-extract-meta": "^2.0.4",
+    "rehype-parse": "^8.0.4",
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.19",
+    "esbuild": "^0.17.5",
+    "typescript": "^4.9.5",
+    "uvu": "^0.5.6"
+  },
+  "scripts": {
+    "test": "uvu test",
+    "build:types": "tsc src/index.js --declaration --allowJs --emitDeclarationOnly --outDir dist",
+    "build:lib": "esbuild src/index.js --format=esm --bundle --outdir=dist"
+  }
+}
